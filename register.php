@@ -9,7 +9,9 @@ if (isset($_SESSION["errors"])){
     unset($_SESSION["errors"]);
 }
 if (isGet()){
-    extract($_SESSION["form"]);
+    if (isset($_SESSION["form"])){
+        extract($_SESSION["form"]);
+    }    
     include_once("templates/register.tpl.php");
 }
 
@@ -24,6 +26,7 @@ if (isPost()){
         $existsError = checkExistUser($form);
         if ($existsError){
             registerNewUser($form->userName, $form->phoneNumber, $form->email, $form->password);
+            unset($_SESSION["form"]);
             header('Location: http://' . $_SERVER["HTTP_HOST"] . '/login.php');
         }
         else {

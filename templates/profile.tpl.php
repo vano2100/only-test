@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Задание</a></li>
                     <li><a href="/profile.php">Профиль</a></li>
-                    <li><a href="/login.php">Войти</a></li>
+                    <li><a href="/logout.php">Выйти</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

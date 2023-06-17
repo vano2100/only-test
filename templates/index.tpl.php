@@ -16,6 +16,7 @@
             <li><a href="/">Задание</a></li>
             <li><a href="/profile.php">Профиль</a></li>
             <li><a href="/login.php">Войти</a></li>
+            <li><a href="/register.php">Зарегистрироваться</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
