@@ -15,10 +15,16 @@ if (isGet()) {
 if (isPost()) {
     $uName = $_POST["emailOrPhoneNumber"];
     $uPass = $_POST["password"];
-    if (login($uName, $uPass)) {
-        header('Location: http://' . $_SERVER["HTTP_HOST"] . '/profile.php');
+    $token = $_POST['smart-token'];
+    if (check_captcha($token)) {
+        if (login($uName, $uPass)) {
+            header('Location: http://' . $_SERVER["HTTP_HOST"] . '/profile.php');
+        } else {
+            $_SESSION["error"] = true;
+            header('Location: http://' . $_SERVER["HTTP_HOST"] . '/login.php');
+        }
     } else {
-        $_SESSION["error"] = true;
-        header('Location: http://' . $_SERVER["HTTP_HOST"] . '/login.php');
+        echo "Robot\n";
     }
+    
 }

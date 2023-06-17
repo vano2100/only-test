@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Only test - login page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
 </head>
 
 <body style="padding-top: 50px;">
@@ -37,6 +38,8 @@
                 <label for="password">Пароль:</label>
                 <input name="password" type="password" class="form-control" id="password" placeholder="Password">
             </div>
+            <input type="hidden" name="smart-token" value="<токен>">
+            <div id="captcha-container" class="smart-captcha" data-sitekey="ysc1_RyealDzFFhsAOgnixAu5ayCaPeHf2wlZdUGxpy7E4722aea8"></div>
             <button type="submit" class="btn btn-default">Войти</button>
         </form>
     </div>
